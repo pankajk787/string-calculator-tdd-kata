@@ -29,4 +29,10 @@ describe("String Calculator - Addition", () => {
     it('should support custom delimiter syntax - "//[delimiter]\n[numbers…]"', () => {
         expect(calc.add("//;\n5;6")).toBe(11);
     });
+
+    test('throws error on negative numbers', () => {
+        const negativeNumbers = [ -3]
+        const negativeNumbersStr = negativeNumbers.join(",");
+        expect(() => calc.add(`1,${negativeNumbersStr}`)).toThrow(`negative numbers not allowed: ${negativeNumbersStr}`);
+    });
 })
