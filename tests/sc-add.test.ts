@@ -21,4 +21,8 @@ describe("String Calculator - Addition", () => {
     it('should return sum for multiple comma-separated numbers', () => {
         expect(calc.add("1,2,3,4,5")).toBe(15);
     });
+
+    it('should handle newlines as delimiters', () => {
+        expect(calc.add("1\n2,3")).toBe(6);
+    });
 })
