@@ -13,4 +13,8 @@ describe("String Calculator - Addition", () => {
     it("should return number for single value", () => {
         expect(calc.add("7")).toBe(7);
     })
+
+    it("should return sum of two numbers (comma-separated)", () => {
+        expect(calc.add("7,3")).toBe(10);
+    })
 })

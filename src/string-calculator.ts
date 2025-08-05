@@ -3,6 +3,9 @@ export class StringCalculator {
         if(numbers === "") {
             return 0;
         }
-        return parseInt(numbers);
+        const parts = numbers.split(",");
+        return parts.reduce((acc, curr)=> {
+            return acc + parseInt(curr);
+        }, 0);
     }
 }
