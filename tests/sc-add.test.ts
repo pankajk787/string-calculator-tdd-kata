@@ -25,4 +25,8 @@ describe("String Calculator - Addition", () => {
     it('should handle newlines as delimiters', () => {
         expect(calc.add("1\n2,3")).toBe(6);
     });
+
+    it('should support custom delimiter syntax - "//[delimiter]\n[numbers…]"', () => {
+        expect(calc.add("//;\n5;6")).toBe(11);
+    });
 })
